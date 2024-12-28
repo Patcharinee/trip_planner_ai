@@ -10,12 +10,6 @@ from pydantic import BaseModel, Field
 from typing import List
 
 class TravelPlanner():
-    """
-    TravelPlanner is a class designed to create a travel plan based on user inputs such as city,
-    activities. It helps group the interesting places to visit based on the number of days of the trip and
-    provide suggested order to visit the places.
-
-    """
     def __init__(self, args_dict):
         """
         Initializes the TravelPlanner with the given arguments.
@@ -44,7 +38,7 @@ class TravelPlanner():
             description: str = Field(description="Brief description of the attraction")
 
         class AttractionList(BaseModel):
-            attractions: List[Attraction] = Field(description="List of top attractions in Osaka")
+            attractions: List[Attraction] = Field(description="List of top attractions")
 
         # Set up the output parser
         parser = PydanticOutputParser(pydantic_object=AttractionList)
